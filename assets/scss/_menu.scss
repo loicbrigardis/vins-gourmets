@@ -1,14 +1,20 @@
-.menu {
+.header {
+    $menu_height: 75px;
+
     background-color: $menu;
+    display: flex;
+    justify-content: center;
+
 
     &__logo {
-        height: 65px;
+        height: $menu_height;
         transform: scale(1.2);
     }
 
     &__nav {
         margin-top: 0!important;
         margin-bottom: 0!important;
+        max-width: 75rem;
     }
 
     & nav > ul {
@@ -21,7 +27,7 @@
     
     & nav > ul > li {
         padding: 10px 30px 10px 30px;
-        height: 65px;
+        height: $menu_height;
         display: flex;
         align-items: center;
         border-bottom: 4px solid transparent;
@@ -51,10 +57,57 @@
         border-bottom: 4px solid $active;
     }
 
-    & nav > ul > li > a{
+    & nav > ul > li > a {
         color: $text-1;
         text-decoration: none;
         font-family: $family-1;
         font-size: 1.2rem;
+    }
+}
+
+.menu {
+
+    &__sub_left {
+        background-color: #eee;
+
+        &__content {
+            padding: 30px 50px;
+            min-height: 300px;
+        }
+    }
+
+    &__sub_right {
+        background-color: #ddd;
+
+        &__content {
+            padding: 10px 50px;
+            min-height: 300px;
+
+            figure {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+            
+            figure .img-container {
+                height: 90px;
+                width: 180px;
+                overflow: hidden;
+                line-height: 0;
+            }
+            
+            figure .img-container > img {
+                transform: scale(0.90) translate(-10px, -10px);
+                transition: transform 200ms;
+            }
+            
+            figure:hover .img-container > img {
+                transform: scale(1) translate(-10px, -10px);
+            }
+
+            figure > figcaption {
+                padding-left: 20px;
+            }
+        }
     }
 }
