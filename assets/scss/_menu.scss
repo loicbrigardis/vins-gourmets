@@ -72,7 +72,45 @@
 
         &__content {
             padding: 30px 50px;
-            min-height: 300px;
+            min-height: 320px;
+        }
+
+        button {
+            background-color: #565e60;
+            padding: 15px 25px;
+            color: $text-1;
+            position: relative;
+            border: 0 solid transparent;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #3b4142;
+            transition: all 200ms;
+        }
+
+        button::before {
+            content: "";
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: absolute;
+            height: 80%;
+            width: 92%;
+            top:8%;
+            left:3%;
+        }
+
+        button::after {
+            content: ">>";
+            padding-left: 5px;
+            transition: all 200ms;
+            position: relative;
+            left: 0;
+        }
+
+        button:hover::after{
+            content: ">>";
+            left: 5px;
         }
     }
 
@@ -81,7 +119,8 @@
 
         &__content {
             padding: 10px 50px;
-            min-height: 300px;
+            //Same min-height left side + padding
+            min-height: calc(320px + 40px);
 
             figure {
                 display: flex;
