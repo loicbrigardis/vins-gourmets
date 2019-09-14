@@ -1,7 +1,6 @@
 .header {
     $menu_height: 75px;
 
-    background-color: $menu;
     display: flex;
     justify-content: center;
 
@@ -22,6 +21,7 @@
         align-items: center;
         list-style: none;
         margin-bottom: 0;
+        padding-left: 20px;
     }
     
     & nav > ul > li {
@@ -66,6 +66,7 @@
 
 .menu {
     $sub-menu-min-h: 320px;
+    background-color: $menu;
 
     &__sub {
         position: relative;

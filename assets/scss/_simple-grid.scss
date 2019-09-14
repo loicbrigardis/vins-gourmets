@@ -136,11 +136,19 @@ $breakpoint-large: 60em; // 960px
 .row {
   position: relative;
   width: 100%;
+  max-width: 1280px;
 }
 
 .row-m0 {
   position: relative;
   width: 100%;
+  max-width: 1280px;
+  margin: 0;
+}
+
+.row-w0 {
+  position: relative;
+  max-width: 1280px;
   margin: 0;
 }
 
