@@ -477,16 +477,55 @@ svg #wheel {
 
 .vins {
   background-color: #f2f2f2;
+  padding-bottom: 50px;
 }
 .vins ul {
   display: grid;
   grid-template-columns: repeat(4, 25%);
-  padding: 0 80px;
+  padding: 0 50px;
   margin: 0;
   height: auto;
 }
 .vins ul li {
   list-style: none;
+  position: relative;
+}
+.vins ul li a {
+  text-decoration: none;
+}
+.vins ul li svg {
+  fill: #a5a5a5;
+  padding: 10px;
+  transition: all 250ms;
+  border-radius: 50%;
+}
+.vins ul li .desc {
+  position: relative;
+  z-index: 2;
+  margin-top: -25px;
+}
+.vins ul li:hover svg {
+  background-color: #fff;
+  transform: translateY(-20px);
+}
+.vins ul li h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+  font-weight: bold;
+  color: #a5a5a5;
+  margin: 0;
+}
+.vins ul li .desc p {
+  font-style: italic;
+  line-height: 1;
+  opacity: 0;
+  margin: 5px 0 0 0;
+  transform: translateY(-35px) scale(0.8);
+  transition: all 250ms;
+}
+.vins ul li:hover .desc p {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 .vins ul li figure {
   margin: 0;
@@ -495,41 +534,118 @@ svg #wheel {
   opacity: 0.8;
   transition: all 150ms;
 }
-.vins ul li figure:hover {
+.vins ul li:hover figure {
   opacity: 1;
+}
+.vins ul li .btn {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #565E60;
+  height: 20px;
+  width: 20px;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translate(0px, -200px) scale(0.4);
+  transition: all 250ms 150ms;
+}
+.vins ul li:hover .btn {
+  opacity: 1;
+  background-color: #565E60;
+  transform: translate(0px, -200px) scale(0.8);
+}
+.vins ul li .btn:hover strong {
+  color: red;
+}
+.vins ul li .btn:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  padding: 60px;
+  margin-top: -51px;
+}
+.vins ul li .btn strong {
+  color: #ffffff;
 }
 .vins ul li figure img {
   width: 100%;
   position: relative;
-  transform: translateY(-18.5%);
+  margin-top: -33.5%;
 }
 .vins ul li figure img.bg, .vins ul li figure img.fg {
   width: 100%;
   position: absolute;
   top: 0;
-  transform: translateY(-5.5%) scale(0.4);
+  margin-top: -5%;
+  transform: scale(0.4);
   opacity: 0;
   transition: all 450ms cubic-bezier(0.42, 0, 0.15, 1.65);
 }
-.vins ul li figure:hover img.bg {
+.vins ul li:hover figure img.bg {
   width: 100%;
   position: absolute;
   top: 0;
   opacity: 1;
-  transform: translateY(-18.5%) scale(1);
+  margin-top: -33.5%;
+  transform: scale(1);
   transition: all 450ms cubic-bezier(0.42, 0, 0.15, 1.65);
 }
-.vins ul li figure:hover img.fg {
+.vins ul li:hover figure img.fg {
   z-index: 2;
 }
-.vins ul li figure:hover img.fg {
+.vins ul li:hover figure img.fg {
   width: 100%;
   position: absolute;
   top: 0;
   opacity: 1;
-  transform: translateY(-18.5%) scale(1);
+  margin-top: -33.5%;
+  transform: scale(1);
   transition: all 450ms cubic-bezier(0.42, 0, 0.15, 1.65) 150ms;
   z-index: 2;
+}
+
+.decouvertes h3 {
+  font-size: 2rem;
+  padding: 30px 0 0 0;
+}
+.decouvertes ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 55px;
+}
+.decouvertes ul li {
+  padding: 30px 0;
+  position: relative;
+}
+.decouvertes ul li:not(:last-child):after {
+  content: "";
+  height: 3px;
+  width: 85px;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #d8d8d8;
+}
+.decouvertes ul li a {
+  text-decoration: none;
+  color: #a5a5a5;
+}
+.decouvertes ul li strong {
+  font-size: 1.2rem;
+}
+
+footer {
+  background-color: #252b31;
+}
+footer p {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=/main.90218242.css.map */

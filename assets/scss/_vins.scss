@@ -1,17 +1,63 @@
 .vins {
-    background-color: #f2f2f2;;
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
 
     & ul {
         display: grid;
         grid-template-columns: repeat(4, 25%);
-        padding: 0 80px;
+        padding: 0 50px;
         margin: 0;
         height: auto;
-        
     }
 
     & ul li {
       list-style: none;
+      position: relative;
+    }
+
+    & ul li a {
+      text-decoration: none;
+    }
+
+    & ul li svg {
+        fill: $decouverte-text-2;
+        padding: 10px;
+        transition: all 250ms;
+        border-radius: 50%;
+    }
+    
+    & ul li .desc {
+        position: relative;
+        z-index: 2;
+        margin-top: -25px;
+    }
+
+    
+    & ul li:hover svg {
+        background-color: #fff;
+        transform: translateY(-20px);
+    }
+    
+    & ul li h3 {
+        text-transform: uppercase;
+        margin-top: 0;
+        font-weight: bold;
+        color: $decouverte-text-2;
+        margin: 0;
+    }
+    
+    & ul li .desc p {
+       font-style: italic;
+       line-height: 1;
+       opacity: 0;
+       margin: 5px 0 0 0;
+       transform: translateY(-35px) scale(0.8);
+       transition: all 250ms;
+    }
+
+    & ul li:hover .desc p {
+       opacity: 1;
+       transform: translateY(0) scale(1);
     }
 
     & ul li figure {
@@ -21,15 +67,56 @@
        opacity: 0.8;
        transition: all 150ms;
     }
+    
+    & ul li:hover figure {
+        opacity: 1;
+    }
+    
+    & ul li .btn {
+        position: absolute;
 
-    & ul li figure:hover {
-       opacity: 1;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 50%;
+        background-color: $vin-btn;
+        height: 20px;
+        width: 20px;
+        padding: 60px;
+
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+        transform: translate(0px, -200px) scale(0.4);
+        transition: all 250ms 150ms;
+    }
+    
+    & ul li:hover .btn {
+        opacity: 1;
+        background-color: $vin-btn;
+        transform: translate(0px, -200px) scale(0.8);
+    }
+
+    & ul li .btn:hover strong {
+        color: red;
+    }
+
+    & ul li .btn:after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        padding: 60px;
+        margin-top: -51px;
+    }
+    
+    & ul li .btn strong {
+        color: $text-1;
     }
 
     & ul li figure img {
         width: 100%;
         position: relative;
-        transform: translateY(-18.5%);
+        margin-top: -33.5%;
     }
 
     $transition: all 450ms cubic-bezier(0.42, 0, 0.15, 1.65);
@@ -38,30 +125,33 @@
         width: 100%;
         position: absolute;
         top: 0;
-        transform: translateY(-5.5%) scale(0.4);
+        margin-top: -5%;
+        transform:scale(0.4);
         opacity: 0;
         transition: $transition;
     }
     
-    & ul li figure:hover img.bg  {
+    & ul li:hover figure img.bg  {
         width: 100%;
         position: absolute;
         top: 0;
         opacity: 1;
-        transform: translateY(-18.5%) scale(1);
+        margin-top: -33.5%;
+        transform: scale(1);
         transition: $transition;
     }
 
-    ul li figure:hover img.fg  {
+    ul li:hover figure img.fg  {
         z-index: 2;
     }
 
-    ul li figure:hover img.fg  {
+    ul li:hover figure img.fg  {
         width: 100%;
         position: absolute;
         top: 0;
         opacity: 1;
-        transform: translateY(-18.5%) scale(1);
+        margin-top: -33.5%;
+        transform: scale(1);
         transition: $transition 150ms;
         z-index: 2;
     }
