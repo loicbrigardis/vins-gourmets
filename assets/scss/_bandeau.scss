@@ -1,0 +1,58 @@
+.bandeau {
+
+    figure {
+        padding: 0;
+        margin: 0;
+        height: 450px;
+        min-height: 350px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+       
+    }
+    
+    figcaption {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    figcaption h2 {
+        color: $bandeau-text;
+        font-size: 1.2rem;
+    }
+
+    figcaption h3 {
+        color: $bandeau-text;
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    svg {
+        margin-top: 25px;
+        stroke: $bandeau-text;
+        transform: scale(0.6);
+    }
+    
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateY(0);
+	}
+	30% {
+		transform: translateY(60px);
+	}
+}
+
+svg #wheel {
+	animation: scroll ease 2s infinite;
+}

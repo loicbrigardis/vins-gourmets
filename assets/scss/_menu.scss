@@ -8,7 +8,6 @@
 
     &__logo {
         height: $menu_height;
-        transform: scale(1.2);
     }
 
     &__nav {
@@ -26,12 +25,10 @@
     }
     
     & nav > ul > li {
-        padding: 10px 30px 10px 30px;
         height: $menu_height;
         display: flex;
         align-items: center;
         border-bottom: 4px solid transparent;
-        cursor: pointer;
         position: relative;
     }
 
@@ -62,17 +59,38 @@
         text-decoration: none;
         font-family: $family-1;
         font-size: 1.2rem;
+        display: inline-block;
+        padding: 27px 30px;
     }
 }
 
 .menu {
+    $sub-menu-min-h: 320px;
 
+    &__sub {
+        position: relative;
+        z-index: 2;
+
+        & .menu-1, .menu-2, .menu-3, .menu-4, .menu-5 {
+            opacity: 0;
+            height: 0;
+            transition: all 250ms;
+            visibility: hidden;
+            position: absolute;
+        }
+
+    }
+    
     &__sub_left {
         background-color: #eee;
 
+        p {
+            font-size: 1rem;
+        }
+
         &__content {
             padding: 30px 50px;
-            min-height: 320px;
+            min-height: $sub-menu-min-h;
         }
 
         button {
@@ -118,9 +136,9 @@
         background-color: #ddd;
 
         &__content {
-            padding: 10px 50px;
+            padding: 10px 0;
             //Same min-height left side + padding
-            min-height: calc(320px + 40px);
+            min-height: $sub-menu-min-h + 40px;
 
             figure {
                 display: flex;
@@ -131,6 +149,7 @@
             figure .img-container {
                 height: 90px;
                 width: 180px;
+                min-width: 180px;
                 overflow: hidden;
                 line-height: 0;
             }
@@ -146,6 +165,10 @@
 
             figure > figcaption {
                 padding-left: 20px;
+            }
+
+            figure:hover > figcaption, figure:hover > figcaption strong {
+                color: $dark-grey;
             }
         }
     }

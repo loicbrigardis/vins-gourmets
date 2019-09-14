@@ -11,6 +11,7 @@ $font-weight-heavy: 700;
 $font-height: 1.5;
 
 // colors
+$light-grey: #505164;
 $dark-grey: #333447;
 $dark-gray: #333447; // for the Americans
 
@@ -29,7 +30,7 @@ body {
 
 * {
   font-family: $font-family;
-  color: $dark-grey;
+  color: $light-grey;
   line-height: $font-height;
 }
 

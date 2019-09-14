@@ -1,0 +1,39 @@
+.breadcrumbs {
+    background-color: $breadcrumbs;
+    padding: 5px 0;
+
+    &__list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding-left: 35px;
+    }
+
+    &__list li {
+        display: flex;
+        align-items: center;
+    }
+
+    &__list li:not(:first-child)::before {
+        content: "\00a0\00BB\00a0";
+        padding-bottom: 6px;
+    }
+    
+    &__list a {
+        color: $breadcrumbs-text;
+        font-family: "myriad-pro-condensed", "Myriad Pro", sans-serif;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    &__list a:hover {
+        color: lighten($breadcrumbs-text, 20%);
+    }
+
+    & p {
+        margin: 0;
+
+    }
+}
