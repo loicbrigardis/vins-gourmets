@@ -56,3 +56,10 @@
 svg #wheel {
 	animation: scroll ease 2s infinite;
 }
+
+@media (max-width: $breakpoint-med) { 
+    .bandeau figure {
+        height: 300px;
+        min-height: 300px;
+    }
+}
