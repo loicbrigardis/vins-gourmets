@@ -1,7 +1,57 @@
 footer {
-    background-color: $footer-color;
     
-    & p {
-        color: $text-1;
+    & .footer-top {
+        background-color: $footer-color;
+    }
+    & .footer-bottom {
+        padding-bottom: 55px;
+        background-color: lighten($footer-color, 2%);
+    }
+    
+    & .footer__logo {
+        height: 50px;
+    }
+
+    & .copy {
+        color: darken($text-1, 40%);
+    }
+
+    & .block {
+        background-color: $footer-block;
+
+        p {
+            background-color: darken($footer-block, 2%);
+            color: darken($text-1, 50%);
+            font-weight: bold;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        & ul {
+            list-style: none;
+            padding: 5px 0;
+            margin: 0;
+        }
+
+        & ul li a {
+            color: darken($text-1, 50%);
+            text-decoration: none;
+        }
+
+        &.video li {
+            line-height: 0;
+        }
+
+        &.video img {
+            filter: grayscale(100%);
+            background-size: cover;
+            width: 100%;
+            transition: all 550ms;
+            cursor: pointer;
+        }
+
+        &.video img:hover {
+            filter: grayscale(0%);
+        }
     }
 }

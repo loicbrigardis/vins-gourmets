@@ -3,6 +3,8 @@
 
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 10;
 
 
     &__logo {
@@ -29,7 +31,6 @@
         display: flex;
         align-items: center;
         border-bottom: 4px solid transparent;
-        position: relative;
     }
 
     & nav > ul > li:first-child {
@@ -42,7 +43,7 @@
         width: 1px;
         height: 20px;
         background-color: $active;
-        position: absolute;
+        position: relative;
         right: 0;
     }
 
@@ -65,33 +66,42 @@
 }
 
 .menu {
-    $sub-menu-min-h: 320px;
+    $sub-menu-min-h: 350px;
     background-color: $menu;
 
-    &__sub {
-        position: relative;
-        z-index: 2;
-
-        & .menu-1, .menu-2, .menu-3, .menu-4, .menu-5 {
-            opacity: 0;
-            height: 0;
-            transition: all 250ms;
-            visibility: hidden;
-            position: absolute;
-        }
-
+    & .sub-menu {
+        position: absolute;
+        top: 95px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ddd;
+        border-bottom: 5px solid #fff;
+        transform: scaleY(0.8);
+        transform-origin: top center;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 250ms 150ms;
     }
-    
+
+    & li:hover .sub-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
     &__sub_left {
         background-color: #eee;
+        margin: 0!important;
 
         p {
             font-size: 1rem;
         }
 
         &__content {
-            padding: 30px 50px;
+            padding: 50px;
             min-height: $sub-menu-min-h;
+            text-align: left;
         }
 
         button {
@@ -136,6 +146,24 @@
     &__sub_right {
         background-color: #ddd;
 
+        .more-info h3 {
+            color: $decouverte-text-2;
+            text-align: left;
+        }
+
+        .more-info p {
+            text-align: left;
+        }
+
+        .more-info a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .more-info a:hover {
+            color: $more-info;
+        }
+
         &__content {
             padding: 10px 0;
             //Same min-height left side + padding
@@ -145,6 +173,7 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
+                text-align: left;
             }
             
             figure .img-container {
@@ -171,8 +200,10 @@
             figure:hover > figcaption, figure:hover > figcaption strong {
                 color: $dark-grey;
             }
+
         }
     }
+    
 }
 
 .menu-m {
