@@ -1,0 +1,36 @@
+.side-menu {
+    position: fixed;
+    background: linear-gradient(to right, #edeaea 88%,#cccccc 100%);
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 15;
+
+    & ul {
+        list-style: none;
+    }
+
+    & li {
+        padding: 20px 0;
+    }
+
+    & li a {
+        text-decoration: none;
+        font-size: 1.4rem;
+    }
+
+    & li a:before {
+        content: "〈";
+        margin-right: 8px;
+    }
+}
+
+.wrapper-container {
+    perspective: 10000px;
+    overflow: hidden;
+}
+
+.wrapper {
+    transform-origin: left center;
+    transform: translateX(50%) rotateY(-60deg);
+}
