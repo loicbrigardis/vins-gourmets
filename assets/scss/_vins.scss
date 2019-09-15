@@ -1,6 +1,21 @@
 .vins {
     background-color: #f2f2f2;
     padding-bottom: 50px;
+    position: relative;
+
+    .shadow {
+        position: absolute;
+        top: 45%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(19,19,19);
+        background: radial-gradient(circle, rgba(19,19,19,1) 0%, rgba(0,212,255,0) 100%);
+        filter: blur(5px);
+        opacity: 0.1;
+        height: 8%;
+        border-radius: 50%;
+    }
 
     & ul {
         display: grid;
@@ -158,6 +173,10 @@
 
 @media (max-width: $breakpoint-med) { 
     .vins {
+
+        .shadow {
+            display: none;
+        }
 
         & ul {
             grid-template-columns: repeat(2, 50%);

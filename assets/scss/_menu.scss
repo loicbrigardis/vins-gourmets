@@ -174,3 +174,59 @@
         }
     }
 }
+
+.menu-m {
+    background-color: $menu;
+    display: none;
+
+    & .header__logo {
+        height: 40px;
+    }
+}
+
+@media (max-width: $breakpoint-large) { 
+    .menu {
+        display: none;
+    }
+    .menu-m {
+        display: block;
+
+        .toggle {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            width: 80px;
+        }
+        
+        .toggle ul {
+            list-style: none;
+            margin: 0;
+            width: 80px;
+            height: 45px;
+            padding: 8px;
+            padding-left: 0;
+        }
+
+        .toggle ul li {
+            height: 6px;
+        }
+
+        .toggle ul span {
+            height: 2px;
+            width: 20px;
+            background-color: #fff;
+            display: inline-block;
+            transition: all 150ms ease-in-out;
+        }
+
+        .toggle ul:hover li:nth-child(2) span {
+            transform: translateX(2px);
+        }
+
+        .toggle ul:hover li:nth-child(1) span,
+        .toggle ul:hover li:nth-child(3) span {
+            opacity: 0.6;
+        }
+
+    }
+}
