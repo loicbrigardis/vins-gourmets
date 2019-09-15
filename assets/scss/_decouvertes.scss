@@ -35,6 +35,11 @@
         color: $decouverte-text-2;
     }
 
+    & ul li:hover a {
+        text-decoration: none;
+        color: darken($decouverte-text-2, 10%);
+    }
+
     & ul li strong {
         font-size: 1.2rem;
     }

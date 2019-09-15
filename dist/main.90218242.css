@@ -735,6 +735,10 @@ svg #wheel {
   text-decoration: none;
   color: #a5a5a5;
 }
+.decouvertes ul li:hover a {
+  text-decoration: none;
+  color: #8c8c8c;
+}
 .decouvertes ul li strong {
   font-size: 1.2rem;
 }
